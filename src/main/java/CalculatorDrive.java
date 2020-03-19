@@ -7,5 +7,5 @@ public interface CalculatorDrive {
 	
 	public int multiply(int x, int y);
 	
-	public int division(int x,int y) throws DivisionByZero;
+	public int division(int x,int y) throws DivisionByZeroException;
 }

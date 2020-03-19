@@ -18,12 +18,12 @@ public class SuperCalculator {
 		return result;
 	}
 	
-	public int division(int x,int y) throws DivisionByZero {
+	public int division(int x,int y) throws DivisionByZeroException {
 		int result;
 		try {
 			result = this.calculatorDrive.division(x, y);
-		}catch (DivisionByZero e) {
-			throw new DivisionByZero();
+		}catch (DivisionByZeroException e) {
+			throw new DivisionByZeroException();
 		}
 		
 		return result;

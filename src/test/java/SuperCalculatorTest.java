@@ -76,7 +76,7 @@ class SuperCalculatorTest {
 	 * */
 	
 	@Test
-	public void addAndMultiply() {				
+	public void addAndMultiplyTest() {				
 		EasyMock.expect(mock.add(10, 10)).andReturn(20); //03
 		EasyMock.expect(mock.multiply(20, 10)).andReturn(200); //03		
 		EasyMock.replay(mock); //04		
@@ -86,11 +86,11 @@ class SuperCalculatorTest {
 	}
 	
 	@Test
-	public void divisionByZeroTest() throws DivisionByZero{
-		EasyMock.expect(mock.division(10, 0)).andThrow(new DivisionByZero()); //03		
+	public void divisionByZeroTest() throws DivisionByZeroException{
+		EasyMock.expect(mock.division(10, 0)).andThrow(new DivisionByZeroException()); //03		
 		EasyMock.replay(mock); //04
 		
-		Assertions.assertThrows(DivisionByZero.class, ()->{
+		Assertions.assertThrows(DivisionByZeroException.class, ()->{
 			superCalculator.division(10, 0);
 		}); //05
 		EasyMock.verify(mock); //06

@@ -1,5 +1,5 @@
 
-public class DivisionByZero extends Exception {
+public class DivisionByZeroException extends Exception {
 
 	/**
 	 * 
