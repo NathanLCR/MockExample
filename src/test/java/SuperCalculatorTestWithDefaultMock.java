@@ -7,6 +7,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/*
+ * Teste feitos com mock do tipo default
+ * Esse tipo de mock verifica se todos os comportamentos esperado foram demandados,
+ * mas não verifica a ordem de chamada.
+ * */
+
 class SuperCalculatorTest {
 	@Mock
 	private CalculatorDrive mock;	
@@ -23,7 +29,7 @@ class SuperCalculatorTest {
 	}
 	
 	@Test
-	public void addAndDoubleTest1() {
+	void addAndDoubleTest1() {
 		EasyMock.expect(mock.add(10, 20)).andReturn(30); //03
 		EasyMock.replay(mock); //04
 		int result = superCalculator.addAndDouble(10,20);
@@ -31,7 +37,7 @@ class SuperCalculatorTest {
 		EasyMock.verify(mock); //06
 	}	
 	@Test
-	public void addAndDoubleTest2() {
+	void addAndDoubleTest2() {
 		EasyMock.expect(mock.add(20, 10)).andReturn(30); //03
 		EasyMock.replay(mock); //04
 		
@@ -47,7 +53,7 @@ class SuperCalculatorTest {
 	 * */
 	
 	@Test
-	public void addAndDoubleTest3() {
+	void addAndDoubleTest3() {
 		EasyMock.expect(mock.add(10, 20)).andReturn(30); //03
 		EasyMock.expect(mock.multiply(10, 20)).andReturn(30); //03
 		EasyMock.replay(mock); //04
@@ -62,7 +68,7 @@ class SuperCalculatorTest {
 	 * */	
 	
 	@Test
-	public void addAndDoubleTest4() {
+	void addAndDoubleTest4() {
 		EasyMock.expect(mock.add(10, 20)).andReturn(30).times(2); //03
 		EasyMock.replay(mock); //04
 		int result = superCalculator.addAndDouble(10,20);
@@ -76,7 +82,7 @@ class SuperCalculatorTest {
 	 * */
 	
 	@Test
-	public void addAndMultiplyTest() {				
+	void addAndMultiplyTest() {				
 		EasyMock.expect(mock.add(10, 10)).andReturn(20); //03
 		EasyMock.expect(mock.multiply(20, 10)).andReturn(200); //03		
 		EasyMock.replay(mock); //04		
@@ -86,7 +92,7 @@ class SuperCalculatorTest {
 	}
 	
 	@Test
-	public void divisionByZeroTest() throws DivisionByZeroException{
+	void divisionByZeroTest() throws DivisionByZeroException{
 		EasyMock.expect(mock.division(10, 0)).andThrow(new DivisionByZeroException()); //03		
 		EasyMock.replay(mock); //04
 		
