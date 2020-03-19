@@ -1,4 +1,4 @@
-# Mocks e teste unitarios.
+# Mocks e teste unitários.
 Exemplo de testes unitários utilizando mocks, usando o easymock, feito para aula de programação 3 do professor Daniel Abella.
 
 A classe principal consiste em apenas algumas funções matematicas basicas, que utilizam um drive de calculadora para fazê-las.
@@ -29,5 +29,8 @@ Para os teste existe uma interface que com os métodos usados na classe principa
   * O primeiro `addAndMultiplyTest1` teste é feito apenas para comparação, ele não vai falhar.
   
   * O segundo `addAndMultiplyTest2` é onde podemos ver a diferença do strict mock, pois ele espera que os comportamentos sejam chamados, na ordem
-    especificada no teste, no caso o metodo `CalculatorDrive.multiply` e em seguida `CalculatorDrive.add`, como no metodo testado, a
+    especificada no teste, no caso o método `CalculatorDrive.multiply` e em seguida `CalculatorDrive.add`, como no método testado, a
     ordem não bate com a esperada, ele vai falhar.
+
+
+
