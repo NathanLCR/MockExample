@@ -2,6 +2,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.easymock.EasyMock;
 import org.easymock.Mock;
+import org.easymock.MockType;
 import org.easymock.TestSubject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,8 +13,8 @@ import org.junit.jupiter.api.Test;
  * também verifica a ordem de chamadas dos métodos e comportamentos. * 
  * */
 
-class SuperCalculatorTestWithStricMock {
-	@Mock
+class SuperCalculatorTestWithStrictMock {
+	@Mock(MockType.STRICT)
 	private CalculatorDrive mock;	
 	
 	@TestSubject

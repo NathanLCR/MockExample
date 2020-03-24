@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
  * mas não verifica a ordem de chamada.
  * */
 
-class SuperCalculatorTest {
+class SuperCalculatorTestWithMock {
 	@Mock
 	private CalculatorDrive mock;	
 	
